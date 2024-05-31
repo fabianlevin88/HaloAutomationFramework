@@ -9,6 +9,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -24,4 +25,11 @@ jobs:
         run: mvn install -DskipTests
 
       - name: Run tests
-        run: mvn test -Dsurefire.suiteXmlFiles=regression.xml -Dbrowser=chrome
+        run: mvn test -DsuiteXmlFiles=src/test/java/com/halonasaframework/automation/suites/regression.xml -Dbrowser=chrome
+
+      - name: Archive test reports
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-reports
+          path: target/surefire-reports/

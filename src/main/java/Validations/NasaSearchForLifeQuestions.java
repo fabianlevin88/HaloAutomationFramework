@@ -1,6 +1,7 @@
 package Validations;
 
 import Config.CustomActions;
+import Config.Logger;
 import Config.MyDriver;
 import locators.NasaSearchForLifeLocators;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +26,8 @@ public class NasaSearchForLifeQuestions extends BaseQuestion {
      *
      */
     public void isSectionTitleDisplayed() {
+        Logger.printInfo("Validating if the Page title is the correct one");
         Assert.assertTrue(getCustomActions().isDisplayed(nasaSearchForLifeLocators.getAreWeAloneTitle()));
+        Logger.printDebug("The title is the correct one: " + nasaSearchForLifeLocators.getAreWeAloneTitle().getText());
     }
 }

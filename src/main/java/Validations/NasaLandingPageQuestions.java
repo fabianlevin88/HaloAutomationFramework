@@ -1,6 +1,7 @@
 package Validations;
 
 import Config.CustomActions;
+import Config.Logger;
 import Config.MyDriver;
 import locators.NasaLandingPageLocators;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +26,8 @@ public class NasaLandingPageQuestions extends BaseQuestion {
      *
      */
     public void validateNasaLogoIsDisplayed() {
+        Logger.printInfo("Validating if the NASA logo is displayed or not");
         Assert.assertTrue(getCustomActions().isDisplayed(nasaLocators.getNasaLogo()));
+        Logger.printDebug("The NASA logo is displayed");
     }
 }

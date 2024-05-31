@@ -10,6 +10,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class Firefox extends Browser {
     private DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
 
+
+    public Firefox(boolean headless) {
+        super(headless);
+    }
     /**
      * This method creates an instance of a Mozilla Firefox driver using the webdriver manager library and returns it
      * @return a firefoxdriver instance

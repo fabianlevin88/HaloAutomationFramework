@@ -15,9 +15,9 @@ import static Config.MyDriver.getMyDriver;
 public abstract class BaseTest {
 
     @BeforeSuite(alwaysRun = true)
-    @Parameters({"browser"})
-    public void setUp(String browser) {
-        MyDriver.setMyDriver(new DriverCreator(browser));
+    @Parameters({"browser", "headless"})
+    public void setUp(String browser, String headless) {
+        MyDriver.setMyDriver(new DriverCreator(browser, Boolean.parseBoolean(headless)));
     }
 
     /**

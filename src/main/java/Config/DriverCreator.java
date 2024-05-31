@@ -11,31 +11,21 @@ import static org.openqa.selenium.remote.BrowserType.*;
 public class DriverCreator extends MyDriver {
     private WebDriver driver;
 
-    public DriverCreator(String browser) {
+    public DriverCreator(String browser, boolean headless) {
         setBrowser(browser);
-        createWebDriverInstance(browser);
+        createWebDriverInstance(browser, headless);
     }
 
-    private WebDriver createWebDriverInstance(String browser) {
+    private WebDriver createWebDriverInstance(String browser, boolean headless) {
 
         switch (browser) {
-            case CHROME:
-                driver = new Chrome().getBrowser();
-                break;
-            case FIREFOX:
-                driver = new Firefox().getBrowser();
-                break;
-            case SAFARI:
-                driver = new Safari().getBrowser();
-                break;
-            case EDGE:
-                driver = new Edge().getBrowser();
-                break;
-            default:
-                Logger.printError("The browser name is not defined");
-                driver = null;
-                break;
+            case CHROME -> driver = new Chrome(headless).getBrowser();
+            case FIREFOX -> driver = new Firefox(false).getBrowser();
+            case SAFARI -> driver = new Safari(false).getBrowser();
+            case EDGE -> driver = new Edge(false).getBrowser();
+            default -> Logger.printError("The browser name is not defined");
         }
+
         return driver;
     }
 

@@ -6,6 +6,11 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class Safari extends Browser {
 
+
+    public Safari(boolean headless) {
+        super(headless);
+    }
+
     /**
      * This method creates an instance of a Safari driver
      * @return a safaridriver instance

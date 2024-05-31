@@ -8,6 +8,11 @@ import java.util.logging.Level;
 
 public abstract class Browser {
     private WebDriver driver;
+    private boolean headless;
+
+    public Browser(boolean headless) {
+        this.headless = headless;
+    }
 
     public abstract WebDriver getBrowser();
 
@@ -34,4 +39,6 @@ public abstract class Browser {
     public void setDriver(WebDriver driver) {
         this.driver = driver;
     }
+
+    public boolean isHeadless() { return headless; }
 }
