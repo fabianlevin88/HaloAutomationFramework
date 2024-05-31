@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: CI for Halo's Automation Framework
 
 on:
   push:
@@ -26,6 +26,9 @@ jobs:
 
       - name: Run tests
         run: mvn test -DsuiteXmlFiles=src/test/java/com/halonasaframework/automation/suites/regression.xml -Dbrowser=chrome
+        env:
+          JAVA_HOME: ${{ github.workspace }}/jdk-11
+          PATH: ${{ github.workspace }}/jdk-11/bin:${{ env.PATH }}
 
       - name: Archive test reports
         if: always()
