@@ -4,8 +4,8 @@ import Config.Logger;
 import Config.MyDriver;
 import Validations.NasaLandingPageQuestions;
 import locators.NasaLandingPageLocators;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.Duration;
@@ -77,7 +77,7 @@ public class NasaLandingPage extends BasePage {
      * Clicks on the "Search for Life..." section
      * @return
      */
-    public NasaSearchForLifePage openSearchForLifeLink() {
+    public NasaSearchForLifeSectionPage openSearchForLifeLink() {
         try {
             Logger.printInfo("Selecting the item \"Search For Life in the Universe\"");
             customActions.waitFor.exist(nasaLandingPageLocators.getTheSearchForLifeLink());
@@ -95,7 +95,39 @@ public class NasaLandingPage extends BasePage {
             customActions.clickElement(nasaLandingPageLocators.getTheSearchForLifeLink());
         }
 
-        return new NasaSearchForLifePage(getDriver());
+        return new NasaSearchForLifeSectionPage(getDriver());
+    }
+
+    /**
+     *
+     */
+    public NasaSearchResultPage search(String blogPage) {
+        try {
+            Logger.printInfo("Searching for a blog page about the James Webb telescope");
+
+            Logger.printDebug("Waiting for the search input to be displayed");
+
+            customActions.waitFor.exist(nasaLandingPageLocators.getSearchInput());
+
+            customActions.type(nasaLandingPageLocators.getSearchInput(), blogPage);
+
+            Logger.printDebug("Sending the Enter Key to submit the search");
+
+            customActions.sendKey(nasaLandingPageLocators.getSearchInput(), Keys.ENTER);
+        } catch (Exception exception) {
+            Logger.printWarning("The search input is not yet displayed. Waiting for a little more");
+
+            getWait().pollingEvery(Duration.of(getInterval(), ChronoUnit.SECONDS))
+                    .until(ExpectedConditions.visibilityOf(nasaLandingPageLocators.getSearchInput()));
+
+            customActions.type(nasaLandingPageLocators.getSearchInput(), blogPage);
+
+            Logger.printDebug("Sending the Enter Key to submit the search");
+
+            customActions.sendKey(nasaLandingPageLocators.getSearchInput(), Keys.ENTER);
+        }
+
+        return new NasaSearchResultPage(MyDriver.getMyDriver());
     }
 
     public NasaLandingPageQuestions getNasaLandingPageQuestions() {

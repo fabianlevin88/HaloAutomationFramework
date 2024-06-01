@@ -7,6 +7,20 @@ The purpose of this framework is to comply with Halo's coding challenge. This fr
 * Selenium: As it provides with the necessary functionalities for testing web applications
 * TestNG: As the test runner and executioner
 
+## Why?
+The choosing of these tools and libraries responds to the robust set of capabilities provided by Selenium when needing to test a web application or web page.
+Many libraries exist and would be perfectly fine selections for this task. However, In my most personal opinion, Selenium is one of the best libraries for web testing.
+If you want, you could also read a little [Blog](https://blog.makingsense.com/2020/05/how-to-choose-an-automation-framework-without-dying-in-the-process/) I wrote a couple of years ago talking about this topic.
+
+Now, Why Java? I Just love it and have a lot of experience working with it 😅.
+
+## Scenarios to test
+The Web page selected for testing is the **[Nasa page](https://www.nasa.gov/)**. This is because it has a lot of sections to navigate to, actions and cool pictures to contemplate about the universe.
+The list of tests to be executed are:
+1. Validate that the title of the section "Search For Life" is displayed.
+2. Validate that the search functionality works as expected.
+
+
 ## Introduction
 to clone this repository you need to execute the following command:
 ```

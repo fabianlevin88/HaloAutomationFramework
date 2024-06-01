@@ -27,7 +27,7 @@ public class NasaSearchForLifeQuestions extends BaseQuestion {
      */
     public void isSectionTitleDisplayed() {
         Logger.printInfo("Validating if the Page title is the correct one");
-        Assert.assertTrue(getCustomActions().isDisplayed(nasaSearchForLifeLocators.getAreWeAloneTitle()));
+        Assert.assertTrue(getCustomActions().isDisplayed(nasaSearchForLifeLocators.getAreWeAloneTitle()), "The title is not displayed");
         Logger.printDebug("The title is the correct one: " + nasaSearchForLifeLocators.getAreWeAloneTitle().getText());
     }
 }

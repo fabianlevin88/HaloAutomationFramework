@@ -6,6 +6,7 @@ import org.openqa.selenium.interactions.Actions;
 import static Config.MyDriver.getBrowser;
 
 public class CustomActions {
+    public static final int DELAY_BETWEEN_ACTIONS_IN_SECONDS = 2;
     private JavascriptExecutor js;
     private WebDriver driver;
     public WaitForActions waitFor;
@@ -89,5 +90,35 @@ public class CustomActions {
             Logger.printWarning("Stale element exception.");
         }
         return null;
+    }
+
+    /**
+     * Types the text within the element
+     *
+     * @param element
+     * @param text
+     */
+    public void type(WebElement element, String text) {
+        delay.seconds(DELAY_BETWEEN_ACTIONS_IN_SECONDS, true);
+        element.sendKeys(text);
+    }
+
+    /**
+     *
+     * @param element
+     * @param selectedKey
+     */
+    public void sendKey(WebElement element, Keys selectedKey) {
+        delay.seconds(DELAY_BETWEEN_ACTIONS_IN_SECONDS, true);
+        try {
+            waitFor.exist(element);
+            element.sendKeys(selectedKey);
+            delay.seconds(DELAY_BETWEEN_ACTIONS_IN_SECONDS, true);
+        } catch (Exception exception) {
+            Logger.printWarning("Exception raised when trying to send a key to the element: " + element);
+            waitFor.exist(element);
+            element.sendKeys(selectedKey);
+            delay.seconds(DELAY_BETWEEN_ACTIONS_IN_SECONDS, true);
+        }
     }
 }

@@ -5,7 +5,7 @@ import Validations.NasaSearchForLifeQuestions;
 import locators.NasaSearchForLifeLocators;
 import org.openqa.selenium.support.PageFactory;
 
-public class NasaSearchForLifePage extends BasePage {
+public class NasaSearchForLifeSectionPage extends BasePage {
 
 
     private NasaSearchForLifeLocators nasaSearchForLifeLocators;
@@ -17,7 +17,7 @@ public class NasaSearchForLifePage extends BasePage {
      *
      * @param pDriver the MyDriver instance (it can be a webdriver or an appiumDriver)
      */
-    public NasaSearchForLifePage(MyDriver pDriver) {
+    public NasaSearchForLifeSectionPage(MyDriver pDriver) {
         super(pDriver);
         nasaSearchForLifeLocators = new NasaSearchForLifeLocators();
         nasaSearchForLifeQuestions = new NasaSearchForLifeQuestions(pDriver, nasaSearchForLifeLocators);
