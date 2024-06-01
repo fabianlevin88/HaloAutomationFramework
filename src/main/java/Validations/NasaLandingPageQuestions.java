@@ -12,7 +12,7 @@ public class NasaLandingPageQuestions extends BaseQuestion {
     private final NasaLandingPageLocators nasaLocators;
 
     /**
-     *
+     * {@link NasaLandingPageQuestions} constructor for validations on the Landing Page
      * @param pDriver
      * @param nasaLandingPageLocators
      */
@@ -23,7 +23,7 @@ public class NasaLandingPageQuestions extends BaseQuestion {
     }
 
     /**
-     *
+     * This method validates if the Nasa Logo is displayed or not
      */
     public void validateNasaLogoIsDisplayed() {
         Logger.printInfo("Validating if the NASA logo is displayed or not");
