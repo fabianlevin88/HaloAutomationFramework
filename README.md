@@ -65,7 +65,7 @@ Once the repository has been cloned, the tests can be executed following two dif
 * Through TestNG execution file: When using an IDE like [IntelliJ](https://www.jetbrains.com/es-es/idea/), you can right-click on the regression.xml file located in `src/test/java/com/halonasaframework/automation/suites/regression.xml` and select the option `run src/test/java/com/halonasaframework/automation/suites/regression.xml`
 * Through a Maven command: Assuming that you have already installed Maven (see guide above if not under the Introduction section). You need to execute the following command, specifying the desired browser and the headless flag. For example, if we want to execute the tests on chrome on headless mode, the command is:
 ```
-mvn clean test -DsuiteXmlFile=src/test/java/com/halonasaframework/automation/suites/regression.xml -Dbrowser=chrome -Dheadless=true
+mvn clean test -DsuiteXmlFile=src/test/java/com/halonasaframework/automation/suites/regression.xml -Dbrowser=chrome -Dheadless=true -DblogSearch="James Webb Telescope"
 ```
 > NOTE: Keep in mind that if one or more of these parameters is not passed when execution the Maven command, it will throw an execution error.
 
