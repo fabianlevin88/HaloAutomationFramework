@@ -75,7 +75,7 @@ public class NasaLandingPage extends BasePage {
 
     /**
      * Clicks on the "Search for Life..." section
-     * @return
+     * @return a new {@link NasaSearchForLifeSectionPage} instance
      */
     public NasaSearchForLifeSectionPage openSearchForLifeLink() {
         try {
@@ -99,7 +99,7 @@ public class NasaLandingPage extends BasePage {
     }
 
     /**
-     *
+     * Enters the search text into the search input field and sends the Enter key afterward
      */
     public NasaSearchResultPage search(String blogPage) {
         try {

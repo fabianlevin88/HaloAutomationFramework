@@ -94,7 +94,6 @@ public class CustomActions {
 
     /**
      * Types the text within the element
-     *
      * @param element
      * @param text
      */
@@ -104,7 +103,7 @@ public class CustomActions {
     }
 
     /**
-     *
+     * This method sends a single {@link Keys} to a specific component
      * @param element
      * @param selectedKey
      */

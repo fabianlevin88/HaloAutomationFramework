@@ -1,5 +1,6 @@
 package com.halonasaframework.automation.tests;
 
+import Config.Logger;
 import org.testng.annotations.Test;
 import pages.NasaLandingPage;
 import pages.NasaSearchForLifeSectionPage;
@@ -11,6 +12,8 @@ public class NasaLandingPageTests extends BaseTest {
 
     @Test
     public void openNasaLandingPageTest() {
+        Logger.printTitle("Validate Nasa's Landing Page Test");
+
         nasaLandingPage = getLandingPage();
 
         nasaLandingPage.getNasaLandingPageQuestions().validateNasaLogoIsDisplayed();

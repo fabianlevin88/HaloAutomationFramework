@@ -1,5 +1,6 @@
 package com.halonasaframework.automation.tests;
 
+import Config.Logger;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pages.NasaLandingPage;
@@ -13,6 +14,8 @@ public class NasaSearchTests extends BaseTest {
     @Test
     @Parameters({ "blogSearch" })
     public void validateSearchFeatureTest(String blogSearch) {
+        Logger.printTitle("Validate Search Feature Test");
+
         nasaLandingPage = getLandingPage();
 
         nasaLandingPage.getNasaLandingPageQuestions().validateNasaLogoIsDisplayed();

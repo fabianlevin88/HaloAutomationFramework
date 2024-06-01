@@ -45,7 +45,5 @@ public abstract class BasePage {
 
     public static FluentWait getWait() { return wait; }
 
-    public long getInterval() {
-        return interval;
-    }
+    public long getInterval() { return interval; }
 }

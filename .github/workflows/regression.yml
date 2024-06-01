@@ -34,4 +34,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Ejecutar pruebas
-        run: mvn clean test -DsuiteXmlFile=src/test/java/com/halonasaframework/automation/suites/regression.xml -Dbrowser=chrome -Dheadless=true
+        run: mvn clean test -DsuiteXmlFile=src/test/java/com/halonasaframework/automation/suites/regression.xml -Dbrowser=chrome -Dheadless=true -DblogSearch="James Webb Telescope"
