@@ -4,6 +4,10 @@ import Config.Browser;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+
+import java.util.List;
+import java.util.Map;
 
 public class Edge extends Browser {
 
@@ -17,8 +21,12 @@ public class Edge extends Browser {
      */
     @Override
     public WebDriver getBrowser() {
+        EdgeOptions edgeOptions = new EdgeOptions();
+        if (isHeadless()) {
+            edgeOptions.setCapability("ms:edgeOptions", Map.of("args", List.of("--headless", "--inprivate")));
+        }
         WebDriverManager.edgedriver().setup();
-        setDriver(new EdgeDriver());
+        setDriver(new EdgeDriver(edgeOptions));
         getDriver().manage().window().maximize();
 
         return getDriver();

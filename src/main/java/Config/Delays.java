@@ -6,6 +6,10 @@ public class Delays {
     public Delays() { delayFactor = WaitForActions.DELAY_FACTOR; }
     private float delayFactor;
 
+    /**
+     * This method establishes a sleep time used to wait for an element
+     * @param ms
+     */
     private void delay(int ms) {
         ms = (int) (ms * delayFactor); // adjust total delay by DelayFactor
         if (ms <= 0) return;
@@ -16,6 +20,11 @@ public class Delays {
         }
     }
 
+    /**
+     * This method establishes a sleep time used to wait for an element with a boolean to ignore (or not) the delay factor
+     * @param ms
+     * @param ignoreDelayFactor
+     */
     private void delay(int ms, boolean ignoreDelayFactor) {
         if (!ignoreDelayFactor) ms = (int) (ms * delayFactor); // adjust total delay by DelayFactor
         if (ms <= 0) return;

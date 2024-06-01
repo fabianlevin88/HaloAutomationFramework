@@ -12,7 +12,7 @@ public class NasaSearchForLifeQuestions extends BaseQuestion {
     private NasaSearchForLifeLocators nasaSearchForLifeLocators;
 
     /**
-     *
+     * {@link NasaSearchForLifeQuestions} constructor
      * @param pDriver
      * @param nasaSearchForLifeLocators
      */
@@ -23,7 +23,7 @@ public class NasaSearchForLifeQuestions extends BaseQuestion {
     }
 
     /**
-     *
+     * This method validates if the section's title is displayed or not
      */
     public void isSectionTitleDisplayed() {
         Logger.printInfo("Validating if the Page title is the correct one");

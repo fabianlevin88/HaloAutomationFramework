@@ -23,7 +23,7 @@ public abstract class BasePage {
 
     /**
      * This method will relate the page instance and the webdriver instance using the Page factory.
-     *              Creates the explicit wait and sets the timeout to 20 seconds.
+     * Creates the Fluent wait and sets the timeout to 20 seconds.
      * @param pDriver the MyDriver instance (it can be a webdriver or an appiumDriver)
      */
     public BasePage(MyDriver pDriver) {
@@ -41,5 +41,11 @@ public abstract class BasePage {
 
     public static MyDriver getDriver() {
         return driver;
+    }
+
+    public static FluentWait getWait() { return wait; }
+
+    public long getInterval() {
+        return interval;
     }
 }

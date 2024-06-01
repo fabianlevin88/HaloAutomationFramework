@@ -14,6 +14,8 @@ import static Config.MyDriver.getMyDriver;
 
 public abstract class BaseTest {
 
+    private static final String NASA_URL = "https://www.nasa.gov/";
+
     @BeforeSuite(alwaysRun = true)
     @Parameters({"browser", "headless"})
     public void setUp(String browser, String headless) {
@@ -26,7 +28,7 @@ public abstract class BaseTest {
      */
     public NasaLandingPage getLandingPage() {
         Logger.printInfo("NASA Landing page instance returned");
-        return new NasaLandingPage(getMyDriver(), "https://www.nasa.gov/");
+        return new NasaLandingPage(getMyDriver(), NASA_URL);
     }
 
     /**

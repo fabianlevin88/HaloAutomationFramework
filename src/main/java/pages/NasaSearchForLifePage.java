@@ -10,6 +10,7 @@ public class NasaSearchForLifePage extends BasePage {
 
     private NasaSearchForLifeLocators nasaSearchForLifeLocators;
     private NasaSearchForLifeQuestions nasaSearchForLifeQuestions;
+
     /**
      * This method will relate the page instance and the webdriver instance using the Page factory.
      * Creates the explicit wait and sets the timeout to 20 seconds.

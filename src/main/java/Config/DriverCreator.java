@@ -16,13 +16,18 @@ public class DriverCreator extends MyDriver {
         createWebDriverInstance(browser, headless);
     }
 
+    /**
+     * This method creates an instance of a webdriver according to the selected browser
+     * @param browser
+     * @param headless
+     * @return
+     */
     private WebDriver createWebDriverInstance(String browser, boolean headless) {
-
         switch (browser) {
             case CHROME -> driver = new Chrome(headless).getBrowser();
-            case FIREFOX -> driver = new Firefox(false).getBrowser();
-            case SAFARI -> driver = new Safari(false).getBrowser();
-            case EDGE -> driver = new Edge(false).getBrowser();
+            case FIREFOX -> driver = new Firefox(headless).getBrowser();
+            case SAFARI -> driver = new Safari(false).getBrowser(); // Safari does not support headless mode
+            case EDGE -> driver = new Edge(headless).getBrowser();
             default -> Logger.printError("The browser name is not defined");
         }
 
@@ -41,7 +46,7 @@ public class DriverCreator extends MyDriver {
 
     /**
      * This method returns the instance created of the webDriver
-     * @return
+     * @return the set instance of {@link WebDriver}
      */
     @Override
     public WebDriver getDriver() { return driver; }
