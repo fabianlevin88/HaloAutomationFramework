@@ -27,7 +27,7 @@ public class NasaLandingPageQuestions extends BaseQuestion {
      */
     public void validateNasaLogoIsDisplayed() {
         Logger.printInfo("Validating if the NASA logo is displayed or not");
-        Assert.assertTrue(getCustomActions().isDisplayed(nasaLocators.getNasaLogo()));
+        Assert.assertTrue(getCustomActions().isDisplayed(nasaLocators.getNasaLogo()), "The NASA logo is not displayed");
         Logger.printDebug("The NASA logo is displayed");
     }
 }

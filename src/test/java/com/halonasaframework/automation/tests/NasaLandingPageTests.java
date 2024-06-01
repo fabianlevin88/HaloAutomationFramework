@@ -1,16 +1,19 @@
 package com.halonasaframework.automation.tests;
 
+import Config.Logger;
 import org.testng.annotations.Test;
 import pages.NasaLandingPage;
-import pages.NasaSearchForLifePage;
+import pages.NasaSearchForLifeSectionPage;
 
 public class NasaLandingPageTests extends BaseTest {
 
     private NasaLandingPage nasaLandingPage;
-    private NasaSearchForLifePage nasaSearchForLifePage;
+    private NasaSearchForLifeSectionPage nasaSearchForLifeSectionPage;
 
     @Test
     public void openNasaLandingPageTest() {
+        Logger.printTitle("Validate Nasa's Landing Page Test");
+
         nasaLandingPage = getLandingPage();
 
         nasaLandingPage.getNasaLandingPageQuestions().validateNasaLogoIsDisplayed();
@@ -19,8 +22,8 @@ public class NasaLandingPageTests extends BaseTest {
 
         nasaLandingPage.selectTheUniverseSection();
 
-        nasaSearchForLifePage = nasaLandingPage.openSearchForLifeLink();
+        nasaSearchForLifeSectionPage = nasaLandingPage.openSearchForLifeLink();
 
-        nasaSearchForLifePage.getNasaSearchForLifeQuestions().isSectionTitleDisplayed();
+        nasaSearchForLifeSectionPage.getNasaSearchForLifeQuestions().isSectionTitleDisplayed();
     }
 }

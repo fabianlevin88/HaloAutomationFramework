@@ -5,7 +5,7 @@ import Config.Logger;
 import Config.MyDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import pages.NasaLandingPage;
 
@@ -16,7 +16,7 @@ public abstract class BaseTest {
 
     private static final String NASA_URL = "https://www.nasa.gov/";
 
-    @BeforeSuite(alwaysRun = true)
+    @BeforeMethod(alwaysRun = true)
     @Parameters({"browser", "headless"})
     public void setUp(String browser, String headless) {
         MyDriver.setMyDriver(new DriverCreator(browser, Boolean.parseBoolean(headless)));

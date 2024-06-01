@@ -12,12 +12,12 @@ public class NasaLandingPageLocators {
     private WebElement theUniverseMenu;
     @FindBy(xpath = "//a/span[text()='The Search for Life in the Universe']")
     private WebElement theSearchForLifeLink;
-
+    @FindBy(xpath = "//header//form//input[@name='search']")
+    private WebElement searchInput;
 
     public WebElement getNasaLogo() { return nasaLogo; }
     public WebElement getExploreLinkBtn() { return exploreLinkBtn; }
-
     public WebElement getTheUniverseMenu() { return theUniverseMenu; }
-
     public WebElement getTheSearchForLifeLink() { return theSearchForLifeLink; }
+    public WebElement getSearchInput() { return searchInput; }
 }
